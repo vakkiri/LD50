@@ -1,0 +1,60 @@
+{
+	"0": {
+		"actions": [
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "uhh okay well welcome to cheese industries"
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "thanks."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "my name is sniff, i'll be um..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "doing your orientiation."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "i really hate doing this stuff."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "uh, okay. great."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "yeah. anyway, try walking around."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "you can use WASD or the arrow keys..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "whatever you're comfortable with."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "i'll give it a shot."
+			}
+		]
+	}
+}

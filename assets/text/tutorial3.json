@@ -1,0 +1,60 @@
+{
+	"0": {
+		"actions": [
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "wow, I might not have to pull any overtime."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "ta daaa."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "you can level up your stats at the shop."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "your skills are attack damage..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "attack speed..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "and movement speed."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "stand by an upgrade and press DOWN / S"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "upgrade your attack damage now."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "the cost is visible below each upgrade."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "the bottom UI lists your money."
+			}
+		]
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"0": {
+		"actions": [
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "fabulous. i think we'll get along."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "sweet. lunch?"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "LUNCH. hell yeah."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "oh wait a sec, what's my job?"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "oh, right. basically..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "we have some high profile clients..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "generally with umm.. stalker problems"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "just make sure no one gets to them."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "got it."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "oh, one last thing sorry."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "if you find any items laying around..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "you can pick them up and use them with C/E."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "if you forget, check the bottom of your screen."
+			}
+
+		]
+	}
+}

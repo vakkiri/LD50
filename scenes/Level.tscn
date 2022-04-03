@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/background.png" type="Texture" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://assets/objects/bombicon.png" type="Texture" id=18]
 [ext_resource path="res://assets/ui/shopbanner.png" type="Texture" id=19]
 [ext_resource path="res://scenes/BedroomDoor.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/ui/TryAgain.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/ui/winscreen.png" type="Texture" id=22]
+[ext_resource path="res://assets/objects/snot.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -191,6 +194,69 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 12, 16.5 )
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 23 )
+region = Rect2( 5, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 23 )
+region = Rect2( 10, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 23 )
+region = Rect2( 15, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 23 )
+region = Rect2( 20, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 23 )
+region = Rect2( 25, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 23 )
+region = Rect2( 30, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 23 )
+region = Rect2( 35, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 23 )
+region = Rect2( 40, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 23 )
+region = Rect2( 45, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 23 )
+region = Rect2( 50, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 23 )
+region = Rect2( 55, 0, 5, 5 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 23 )
+region = Rect2( 60, 0, 5, 5 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -203,7 +269,7 @@ texture = ExtResource( 2 )
 tile_set = SubResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -131072, 4, 0, -131067, 4, 0, -65536, 4, 0, -65531, 4, 0, 0, 4, 0, 5, 1610612738, 0, 6, 1610612739, 0, 7, 1610612739, 0, 8, 1610612739, 0, 9, 1610612739, 0, 10, 1610612739, 0, 11, 1610612739, 0, 12, 1610612738, 0, 13, 1610612739, 0, 14, 1610612739, 0, 15, 1610612739, 0, 16, 1610612739, 0, 17, 1610612739, 0, 18, 1610612739, 0, 19, 4, 0, 20, 4, 0, 21, 4, 0, 22, 4, 0, 23, 4, 0, 65536, 4, 0, 65542, 5, 0, 65550, 5, 0, 65559, 4, 0, 131072, 4, 0, 131095, 4, 0, 196608, 4, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196615, 0, 0, 196616, 1, 0, 196617, 1, 0, 196618, 536870912, 0, 196620, 536870913, 0, 196621, 0, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 4, 0, 196628, 4, 0, 196629, 4, 0, 196630, 4, 0, 196631, 4, 0, 262144, 4, 0, 262146, 5, 0, 262151, 536870917, 0, 262154, 536870916, 0, 262156, 536870917, 0, 262163, 4, 0, 327680, 4, 0, 327690, 536870916, 0, 327699, 4, 0, 393216, 4, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 1, 0, 393224, 536870913, 0, 393226, 1610612739, 0, 393227, 536870913, 0, 393230, 536870913, 0, 393231, 1, 0, 393232, 0, 0, 393233, 1, 0, 393234, 1, 0, 393235, 4, 0, 458752, 4, 0, 458762, 536870917, 0, 458768, 5, 0, 458771, 4, 0, 458772, 4, 0, 458773, 4, 0, 458774, 4, 0, 458775, 4, 0, 524288, 4, 0, 524311, 4, 0, 589824, 4, 0, 589847, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 655382, 4, 0, 655383, 4, 0 )
+tile_data = PoolIntArray( -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -131072, 4, 0, -131067, 4, 0, -65536, 4, 0, -65531, 4, 0, 0, 4, 0, 5, 1610612738, 0, 6, 1610612739, 0, 7, 1610612739, 0, 8, 1610612739, 0, 9, 1610612739, 0, 10, 1610612739, 0, 11, 1610612739, 0, 12, 1610612738, 0, 13, 1610612739, 0, 14, 1610612739, 0, 15, 1610612739, 0, 16, 1610612739, 0, 17, 1610612739, 0, 18, 1610612739, 0, 19, 4, 0, 20, 4, 0, 21, 4, 0, 22, 4, 0, 23, 4, 0, 65536, 4, 0, 65542, 5, 0, 65550, 5, 0, 65559, 4, 0, 131072, 4, 0, 131095, 4, 0, 196608, 4, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196615, 0, 0, 196616, 1, 0, 196617, 1, 0, 196618, 2, 0, 196620, 536870913, 0, 196621, 0, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 4, 0, 196628, 4, 0, 196629, 4, 0, 196630, 4, 0, 196631, 4, 0, 262144, 4, 0, 262146, 5, 0, 262151, 536870917, 0, 262154, 536870916, 0, 262156, 536870917, 0, 262163, 4, 0, 327680, 4, 0, 327690, 536870916, 0, 327699, 4, 0, 393216, 4, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 2, 0, 393223, 1, 0, 393226, 1610612739, 0, 393227, 536870913, 0, 393230, 536870913, 0, 393231, 1, 0, 393232, 0, 0, 393233, 1, 0, 393234, 1, 0, 393235, 4, 0, 458752, 4, 0, 458762, 536870917, 0, 458768, 5, 0, 458771, 4, 0, 458772, 4, 0, 458773, 4, 0, 458774, 4, 0, 458775, 4, 0, 524288, 4, 0, 524311, 4, 0, 589824, 4, 0, 589847, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 655382, 4, 0, 655383, 4, 0 )
 
 [node name="Barrier" parent="." instance=ExtResource( 3 )]
 position = Vector2( 304, 16 )
@@ -224,11 +290,11 @@ position = Vector2( 125, 151 )
 
 [node name="MonsterSpawner" parent="." instance=ExtResource( 5 )]
 position = Vector2( 26, -29 )
-spawn_delay = 5.0
+spawn_delay = 15.0
 
 [node name="MonsterSpawner2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 348, 31 )
-spawn_delay = 15.0
+spawn_delay = 5.0
 
 [node name="MonsterSpawner3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 348, 144 )
@@ -246,7 +312,7 @@ visible = false
 tile_set = SubResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 536870912, 0, 131080, 536870912, 0, 131081, 536870912, 0, 131082, 536870912, 0, 131083, 536870912, 0, 131084, 536870912, 0, 131085, 536870912, 0, 131086, 536870912, 0, 131087, 536870912, 0, 196613, 0, 0, 196614, 0, 0, 262149, 0, 0, 262150, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 536870912, 0, 327691, 536870912, 0, 327692, 536870912, 0, 393225, 536870912, 0, 393228, 536870912, 0, 458761, 536870912, 0, 458764, 536870912, 0, 524297, 536870912, 0, 524300, 536870912, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0 )
+tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 536870912, 0, 131080, 536870912, 0, 131081, 536870912, 0, 131082, 536870912, 0, 131083, 536870912, 0, 131084, 536870912, 0, 131085, 536870912, 0, 131086, 536870912, 0, 131087, 536870912, 0, 196613, 0, 0, 196614, 0, 0, 262149, 0, 0, 262150, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327691, 536870912, 0, 327692, 536870912, 0, 327693, 0, 0, 393225, 0, 0, 393229, 0, 0, 458761, 0, 0, 458765, 0, 0, 524297, 0, 0, 524301, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0 )
 
 [node name="TimeAsleepText" parent="." instance=ExtResource( 6 )]
 position = Vector2( 17, 171 )
@@ -256,70 +322,70 @@ lower_padding = 1
 font = "ui_medium"
 
 [node name="CoinIcon" type="TextureRect" parent="."]
-margin_left = 261.0
+margin_left = 269.0
 margin_top = 167.0
-margin_right = 301.0
+margin_right = 309.0
 margin_bottom = 207.0
 texture = ExtResource( 17 )
 
 [node name="CoinsText" parent="." instance=ExtResource( 6 )]
-position = Vector2( 275, 171 )
+position = Vector2( 283, 171 )
 text = "Coins: 0"
 upper_padding = 2
 lower_padding = 1
 font = "ui_medium"
 
 [node name="BombIcon" type="TextureRect" parent="."]
-margin_left = 233.0
+margin_left = 217.0
 margin_top = 167.0
-margin_right = 273.0
+margin_right = 257.0
 margin_bottom = 207.0
 texture = ExtResource( 18 )
 
 [node name="BombText" parent="." instance=ExtResource( 6 )]
-position = Vector2( 247, 171 )
+position = Vector2( 232, 171 )
 text = "Coins: 0"
 upper_padding = 2
 lower_padding = 1
 font = "ui_medium"
 
 [node name="AttackIcon" type="TextureRect" parent="."]
-margin_left = 120.0
+margin_left = 108.0
 margin_top = 167.0
-margin_right = 160.0
+margin_right = 148.0
 margin_bottom = 207.0
 texture = ExtResource( 14 )
 
 [node name="AttackText" parent="." instance=ExtResource( 6 )]
-position = Vector2( 138, 171 )
+position = Vector2( 126, 171 )
 text = "Coins: 0"
 upper_padding = 2
 lower_padding = 1
 font = "ui_medium"
 
 [node name="AttackSpeedIcon" type="TextureRect" parent="."]
-margin_left = 153.0
+margin_left = 139.0
 margin_top = 167.0
-margin_right = 193.0
+margin_right = 179.0
 margin_bottom = 207.0
 texture = ExtResource( 15 )
 
 [node name="AttackSpeedText" parent="." instance=ExtResource( 6 )]
-position = Vector2( 169, 171 )
+position = Vector2( 155, 171 )
 text = "Coins: 0"
 upper_padding = 2
 lower_padding = 1
 font = "ui_medium"
 
 [node name="SpeedIcon" type="TextureRect" parent="."]
-margin_left = 194.0
+margin_left = 177.0
 margin_top = 167.0
-margin_right = 234.0
+margin_right = 217.0
 margin_bottom = 207.0
 texture = ExtResource( 16 )
 
 [node name="SpeedText" parent="." instance=ExtResource( 6 )]
-position = Vector2( 209, 171 )
+position = Vector2( 192, 171 )
 text = "Coins: 0"
 upper_padding = 2
 lower_padding = 1
@@ -383,5 +449,29 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorTrigger"]
 position = Vector2( 107, 143.5 )
 shape = SubResource( 10 )
+
+[node name="TryAgain" parent="." instance=ExtResource( 21 )]
+position = Vector2( 168, 81 )
+
+[node name="WinScreen" type="TextureRect" parent="."]
+visible = false
+margin_left = 112.0
+margin_top = 48.0
+margin_right = 208.0
+margin_bottom = 88.0
+texture = ExtResource( 22 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 100, 136 )
+shape = SubResource( 11 )
+
+[node name="Snot" type="AnimatedSprite" parent="."]
+position = Vector2( 22, 145 )
+frames = SubResource( 25 )
+frame = 4
+playing = true
+centered = false
 
 [connection signal="body_entered" from="DoorTrigger" to="." method="_on_DoorTrigger_body_entered"]

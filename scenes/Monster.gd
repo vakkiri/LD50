@@ -45,6 +45,11 @@ func _update_nav():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_update_nav()
+	if GameState.difficulty == "normal":
+		walk_speed *= 0.5
+		health -= 1
+	else:
+		walk_speed *= 1.25
 
 
 func _bound_vars():
@@ -75,6 +80,9 @@ func _process_movement(_delta):
 
 
 func kill():
+	EnemyPopSound.pitch_scale = rand_range(0.9, 1.1)
+	EnemyPopSound.play()
+	
 	for i in range(coins):
 		var c = COIN.instance()
 		c.position = position

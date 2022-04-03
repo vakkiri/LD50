@@ -25,6 +25,7 @@ func increase_cost():
 
 func upgrade():
 	if player.coins >= cost and visible:
+		ShopSound.play()
 		player.coins -= cost
 		increase_cost()
 		if skill == "speed":

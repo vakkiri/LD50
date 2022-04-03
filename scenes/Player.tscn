@@ -19,6 +19,14 @@ region = Rect2( 0, 48, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 48, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 32, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 64, 16, 16 )
@@ -35,14 +43,6 @@ region = Rect2( 0, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 32, 16, 16 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ) ],
@@ -55,6 +55,11 @@ animations = [ {
 "name": "dash_attack",
 "speed": 20.0
 }, {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "pre_dash",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "attack",
@@ -63,11 +68,6 @@ animations = [ {
 "frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "run",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "pre_dash",
 "speed": 10.0
 } ]
 

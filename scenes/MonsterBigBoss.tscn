@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/monsters/heart.png" type="Texture" id=1]
+[ext_resource path="res://scenes/MonsterBig.gd" type="Script" id=2]
+[ext_resource path="res://assets/monsters/boss.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 31, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 16, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 31, 16, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 31, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 31, 0, 31, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "hit",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "attack",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7, 7 )
+
+[node name="Monster" type="KinematicBody2D" groups=["monster"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 2 )
+walk_speed = 30.0
+coins = 200
+health = 600
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "attack"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 2 )
+shape = SubResource( 4 )
+
+[node name="Heart" type="TextureRect" parent="."]
+visible = false
+margin_left = -2.0
+margin_top = -18.0
+margin_right = 38.0
+margin_bottom = 22.0
+texture = ExtResource( 1 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

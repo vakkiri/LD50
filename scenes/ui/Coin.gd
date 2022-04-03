@@ -44,6 +44,8 @@ func _process(delta):
 	
 	if wander_timer <= 0.0 and in_player:
 		get_parent().get_node("Player").coins += 1
+		CoinSound.pitch_scale = rand_range(0.98, 1.02)
+		CoinSound.play()
 		queue_free()
 
 

@@ -11,7 +11,7 @@ var MAX_VELOCITY = Vector2(110.0, 1024.0)
 const LEFT = 0
 const RIGHT = 1
 
-const GRAVITY = 1400.0
+var GRAVITY = 1400.0
 const AIR_RESIST = 100.0
 const FRICTION = 128.0
 const JUMP_PERIOD = 0.1
@@ -44,7 +44,9 @@ var coins = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if GameState.difficulty == "normal":
+		post_dash_timer += 0.05
+		GRAVITY -= 200
 
 
 func attack_playing():
@@ -112,6 +114,7 @@ func _update_timers(delta):
 
 
 func _attack():
+	SwordSound.play()
 	if $AnimatedSprite.animation == "attack":
 		if $AnimatedSprite.frame == 0:
 			$AnimatedSprite.frame = 1
@@ -167,6 +170,7 @@ func _dash():
 	$AnimatedSprite.animation = "dash_attack"
 	$AnimatedSprite.frame = 0
 	$AnimatedSprite.playing = true
+	DashSound.play()
 
 
 func _throw_bomb():

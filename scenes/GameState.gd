@@ -1,5 +1,6 @@
 extends Node
 
+var difficulty = "normal"
 
 var dialogue_conditions = {
 }

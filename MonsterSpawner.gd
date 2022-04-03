@@ -15,6 +15,7 @@ const DOG = preload("res://scenes/MonsterDog.tscn")
 const BIGDOG = preload("res://scenes/MonsterBigDog.tscn")
 const RACCOON = preload("res://scenes/MonsterRaccoon.tscn")
 const BIGRACCOON = preload("res://scenes/MonsterBigRaccoon.tscn")
+const BIGBOSS = preload("res://scenes/MonsterBigBoss.tscn")
 
 var rac_spawn_rate = 5
 var big_dog_spawn_rate = 9
@@ -27,6 +28,12 @@ var boss_spawn_time = 215
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_time = initial_time
+	if GameState.difficulty == "normal":
+		rac_spawn_rate += 1
+		big_dog_spawn_rate += 1
+		big_rac_spawn_rate += 1
+		spawn_speedup -= 0.05
+		min_spawn_time += 1.0
 
 
 func _spawn(type):
@@ -57,7 +64,7 @@ func _spawn_monster():
 func _process(delta):
 	if active:
 		if not boss_spawned and get_parent().time_asleep >= boss_spawn_time:
-			# todo spawn boss
+			_spawn(BIGBOSS)
 			boss_spawned = true
 		if spawn_delay > 0.0:
 			spawn_delay -= delta

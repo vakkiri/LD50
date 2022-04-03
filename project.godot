@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="LD50"
-run/main_scene="res://scenes/Level.tscn"
+config/name="NAP GUARDIAN"
+run/main_scene="res://scenes/Tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -19,6 +19,13 @@ config/icon="res://icon.png"
 Level1Music="*res://scenes/Level1Music.tscn"
 TextSound="*res://scenes/ui/TextSound.tscn"
 GameState="*res://scenes/GameState.tscn"
+EnemyPopSound="*res://scenes/EnemyPopSound.tscn"
+SwordSound="*res://scenes/SwordSound.tscn"
+DashSound="*res://scenes/DashSound.tscn"
+CoinSound="*res://scenes/CoinSound.tscn"
+ShopSound="*res://scenes/ShopSound.tscn"
+BombSound="*res://scenes/BombSound.tscn"
+StompSound="*res://scenes/StompSound.tscn"
 
 [display]
 

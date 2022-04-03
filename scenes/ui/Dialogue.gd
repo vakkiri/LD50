@@ -12,6 +12,7 @@ var inactive_modulate = Color(1.0, 1.0, 1.0, 0.65)
 var portraits = {
 	"gator": load("res://assets/ui/gatorportrait.png"),
 	"cat": load("res://assets/ui/catportrait.png"),
+	"mouse": load("res://assets/ui/mouseportrait.png"),
 }
 	
 	

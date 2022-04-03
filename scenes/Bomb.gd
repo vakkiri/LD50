@@ -37,6 +37,7 @@ func _process(delta):
 		$AnimatedSprite.playing = true
 		
 	if explosion_timer <= 0.0:
+		BombSound.play()
 		var e = EXPLOSION.instance()
 		e.position = position
 		get_parent().add_child(e)

@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 # Obviously this should just inheret Monster and override the one different method but idk
-
 const COIN = preload("res://scenes/ui/Coin.tscn")
 const EXPLOSION = preload("res://scenes/Explosion.tscn")
 const GRAVITY = 900.0
@@ -43,9 +42,21 @@ func _update_nav():
 			$AnimatedSprite.flip_h = true
 	
 
+func attack():
+	attacking = true
+	$AnimatedSprite.animation = "attack"
+	$AnimatedSprite.frame = 0
+	$AnimatedSprite.playing = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameState.difficulty == "normal":
+		walk_speed *= 0.5
+		health -= 50
+	else:
+		walk_speed *= 1.25
+		
 	_update_nav()
 
 
@@ -77,13 +88,16 @@ func _process_movement(_delta):
 
 
 func kill():
+	EnemyPopSound.pitch_scale = rand_range(0.5, 0.6)
+	EnemyPopSound.play()
+	
 	for i in range(coins):
 		var c = COIN.instance()
 		c.position = position
 		get_parent().add_child(c)
 	for i in range(6):
 		var e = EXPLOSION.instance()
-		e.position = position + Vector2(rand_range(-8, 8), rand_range(-8, 8))
+		e.position = position + Vector2(rand_range(-8, 8), rand_range(-12, 4))
 		get_parent().add_child(e)
 		
 	queue_free()
@@ -151,3 +165,4 @@ func _on_AnimatedSprite_animation_finished():
 			var e = EXPLOSION.instance()
 			e.position = position + Vector2(rand_range(-8, 8), 10.0)
 			get_parent().add_child(e)
+		StompSound.play()

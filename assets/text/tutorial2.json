@@ -1,0 +1,61 @@
+{
+	"0": {
+		"actions": [
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "amazing, you can use your legs."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "i wasn't lying when i put that on my resume."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "i've seen some shit."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "anyway, i'll teach you how to DASH."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "hold X or SHIFT to charge your dash."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "release the key to dash."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "hold W / UP  when releasing to dash upwards."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "try dashing up to the SHOP area."
+			},
+ 			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "alright.. X / SHIFT to dash..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "and hold W / UP to dash upwards..."
+			}
+
+		]
+	}
+}

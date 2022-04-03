@@ -1,0 +1,85 @@
+{
+	"0": {
+		"actions": [
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "gosh, an employee with a brain."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "somehow i feel insulted."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "sorry, it's almost lunch."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "i'm getting hangry."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "anyway, see the dummy up there?"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "press Z / SPACE to attack it."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "shred it up and we can..."
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "go for a lunch break!!"
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "nice, is lunch provided?"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "no."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "damn. anyway, Z / SPACE to attack."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "so the controlls are..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "WASD + SHIFT + SPACE"
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "or ARROWS + Z + X?"
+			},
+			{
+				"speaker": "mouse",
+				"side": "left",
+				"message": "yep! you got it."
+			}
+		]
+	}
+}
