@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gatoraid.wav-a5559f03b7af7c5a11b87409a545507e.sample"
+
+[deps]
+
+source_file="res://assets/audio/gatoraid.wav"
+dest_files=[ "res://.import/gatoraid.wav-a5559f03b7af7c5a11b87409a545507e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

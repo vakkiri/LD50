@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/monsters/bigdog.png" type="Texture" id=1]
+[ext_resource path="res://scenes/MonsterBig.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 19 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "hit",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7, 7 )
+
+[node name="Monster" type="KinematicBody2D" groups=["monster"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 2 )
+walk_speed = 10.0
+coins = 75
+health = 75
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "run"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 2 )
+shape = SubResource( 4 )
