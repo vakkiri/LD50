@@ -1,0 +1,93 @@
+{
+	"0": {
+		"actions": [
+			{
+				"action": "set_condition",
+				"args": {
+					"name": "viewed_intro",
+					"value": true
+				}
+			}
+		],
+		"conditions": {
+			"viewed_intro": null
+		},
+		"messages": [
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "okay, here's the deal."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "yeah?"
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "i've got a big show tonight..."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "and i'm tired as hell."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "so i'm gonna take a nap."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "i'll wake up eventually..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "...inevitably..."
+			},
+ 			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "yeah whatever."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "anyway, just make sure no one wakes me up."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "someone's been posting my location online..."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "and if i wake up to some nasty fans..."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "...knocking on my door..."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "i'm gonna be real pissed."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "so make sure that doesn't happen :)"
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "i'll handle it. go take your nap."
+			}
+		]
+	}
+}

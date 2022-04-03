@@ -21,6 +21,9 @@ var big_dog_spawn_rate = 9
 var big_rac_spawn_rate = 15
 var spawn_index = 0
 
+var boss_spawned = false
+var boss_spawn_time = 215
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_time = initial_time
@@ -53,6 +56,9 @@ func _spawn_monster():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if active:
+		if not boss_spawned and get_parent().time_asleep >= boss_spawn_time:
+			# todo spawn boss
+			boss_spawned = true
 		if spawn_delay > 0.0:
 			spawn_delay -= delta
 		else:

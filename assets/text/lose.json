@@ -1,0 +1,57 @@
+{
+	"0": {
+		"actions": [
+			{
+				"action": "set_condition",
+				"args": {
+					"name": "viewed_intro",
+					"value": true
+				}
+			}
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "asdgasdgas ARE YOU KIDDING ME."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "ummmm... sorry..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "things got kinda out of hand."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "on the bright side though..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "your fans love you so much..."
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "they're willing to die to see you..."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "I. DON'T CARE."
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "YOU'RE FIRED."
+			}
+		]
+	}
+}

@@ -118,10 +118,9 @@ func _process(delta):
 			else:
 				velocity.x = 0
 				
-			if hit_timer <= 0.0:
-				_process_environment(delta)
-				_bound_vars()
-				_process_movement(delta)
+			_process_environment(delta)
+			_bound_vars()
+			_process_movement(delta)
 			
 			nav_timer -= delta
 			if nav_timer <= 0.0:

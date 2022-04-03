@@ -3,4 +3,5 @@
 [ext_resource path="res://assets/audio/gatoraid.wav" type="AudioStream" id=1]
 
 [node name="Level1Music" type="AudioStreamPlayer"]
+pause_mode = 2
 stream = ExtResource( 1 )

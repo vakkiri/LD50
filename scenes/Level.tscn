@@ -224,6 +224,7 @@ position = Vector2( 125, 151 )
 
 [node name="MonsterSpawner" parent="." instance=ExtResource( 5 )]
 position = Vector2( 26, -29 )
+spawn_delay = 5.0
 
 [node name="MonsterSpawner2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 348, 31 )
@@ -232,7 +233,8 @@ spawn_delay = 15.0
 [node name="MonsterSpawner3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 348, 144 )
 initial_time = 15.0
-spawn_delay = 40.0
+spawn_delay = 45.0
+spawn_speedup = 0.3
 
 [node name="Target" type="Node2D" parent="."]
 position = Vector2( 115, 155 )

@@ -1,0 +1,37 @@
+{
+	"0": {
+		"actions": [
+			{
+				"action": "set_condition",
+				"args": {
+					"name": "viewed_intro",
+					"value": true
+				}
+			}
+		],
+		"conditions": {
+		},
+		"messages": [
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "**yaaaawn**"
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "that was a great nap :3"
+			},
+			{
+				"speaker": "cat",
+				"side": "left",
+				"message": "wanna go get a burger?"
+			},
+			{
+				"speaker": "gator",
+				"side": "right",
+				"message": "hell yeah, i'm starving"
+			}
+		]
+	}
+}
