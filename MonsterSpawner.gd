@@ -1,5 +1,7 @@
 extends Node2D
 
+var active = true
+
 var spawn_time = 10.0
 var spawn_random = 0.1
 var spawn_timer = 0.0
@@ -50,11 +52,12 @@ func _spawn_monster():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if spawn_delay > 0.0:
-		spawn_delay -= delta
-	else:
-		spawn_timer -= delta
-		
-		if spawn_timer <= 0.0:
-			spawn_timer += spawn_time + rand_range(0.0, spawn_random)
-			_spawn_monster()
+	if active:
+		if spawn_delay > 0.0:
+			spawn_delay -= delta
+		else:
+			spawn_timer -= delta
+			
+			if spawn_timer <= 0.0:
+				spawn_timer += spawn_time + rand_range(0.0, spawn_random)
+				_spawn_monster()

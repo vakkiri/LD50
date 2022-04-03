@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Obviously this should just inheret Monster and override the one different method but idk
 
 const COIN = preload("res://scenes/ui/Coin.tscn")
-
+const EXPLOSION = preload("res://scenes/Explosion.tscn")
 const GRAVITY = 900.0
 const FRICTION = 128.0
 const MAX_VELOCITY = Vector2(32.0, 600.0)
@@ -23,7 +23,8 @@ export var coins = 10
 var speed = 0.0
 export var health = 6
 
-
+var game_over = false
+var attacking = false
 
 func _update_nav():
 	var target_node = get_parent().get_node("Target")
@@ -80,6 +81,10 @@ func kill():
 		var c = COIN.instance()
 		c.position = position
 		get_parent().add_child(c)
+	for i in range(6):
+		var e = EXPLOSION.instance()
+		e.position = position + Vector2(rand_range(-8, 8), rand_range(-8, 8))
+		get_parent().add_child(e)
 		
 	queue_free()
 
@@ -97,32 +102,53 @@ func _set_animation():
 
 
 func _process(delta):
-	if hit_timer > 0:
-		hit_timer -= delta
-		if blink_timer > 0:
-			blink_timer -= delta
-		else:
-			blink_timer += blink_time
-			visible = !visible
-	else:
+	if game_over:
 		visible = true
-
-	if $AnimatedSprite.frame == 1:
-		velocity.x = speed
+		$AnimatedSprite.animation = "run"
+		$AnimatedSprite.frame = 0
+		$AnimatedSprite.playing = false
+		$Heart.visible = true
 	else:
-		velocity.x = 0
-		
-	if hit_timer <= 0.0:
-		_process_environment(delta)
-		_bound_vars()
-		_process_movement(delta)
-	
-	nav_timer -= delta
-	if nav_timer <= 0.0:
-		nav_timer += nav_time
-		_update_nav()
-		
-	_set_animation()
-	
-	if health <= 0:
-		kill()
+		if attacking:
+			$AnimatedSprite.position.x = rand_range(-1.0, 1.0)
+			$AnimatedSprite.position.y = rand_range(-1.0, 1.0)
+		else:
+			if $AnimatedSprite.frame == 1:
+				velocity.x = speed
+			else:
+				velocity.x = 0
+				
+			if hit_timer <= 0.0:
+				_process_environment(delta)
+				_bound_vars()
+				_process_movement(delta)
+			
+			nav_timer -= delta
+			if nav_timer <= 0.0:
+				nav_timer += nav_time
+				_update_nav()
+				
+			_set_animation()
+			
+		if hit_timer > 0:
+			hit_timer -= delta
+			if blink_timer > 0:
+				blink_timer -= delta
+			else:
+				blink_timer += blink_time
+				visible = !visible
+		else:
+			visible = true
+			
+		if health <= 0:
+			kill()
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "attack":
+		get_parent().lose()
+	else:
+		for i in range(3):
+			var e = EXPLOSION.instance()
+			e.position = position + Vector2(rand_range(-8, 8), 10.0)
+			get_parent().add_child(e)

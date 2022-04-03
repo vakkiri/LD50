@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/monsters/raccoon1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Monster.gd" type="Script" id=2]
+[ext_resource path="res://assets/monsters/heart.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -19,17 +20,30 @@ region = Rect2( 0, 16, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 16, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
+"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": false,
+"name": "attack",
+"speed": 1.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "hit",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -45,9 +59,20 @@ health = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-animation = "run"
+animation = "attack"
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, 2.5 )
 shape = SubResource( 4 )
+
+[node name="Heart" type="TextureRect" parent="."]
+visible = false
+margin_left = -4.0
+margin_top = -11.0
+margin_right = 36.0
+margin_bottom = 29.0
+texture = ExtResource( 3 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

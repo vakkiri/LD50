@@ -79,16 +79,20 @@ func _set_animation():
 	# if we are fully charged
 	if _dash_scale() >= max_dash_scale:	
 		$SwordChargeParticles.emitting = true
+		$SwordChargeParticles2.emitting = true
 		$AnimatedSprite.position.x = rand_range(-0.5, 0.5)
 		$AnimatedSprite.position.y = rand_range(-0.5, 0.5)
 	else:
 		$AnimatedSprite.position = Vector2(0.0, 0.0)
 		$SwordChargeParticles.emitting = false
+		$SwordChargeParticles2.emitting = false
 	
 	if last_direction == RIGHT:
 		$SwordChargeParticles.position = Vector2(-8.0, 3.0)
+		$SwordChargeParticles2.position = Vector2(-6.0, 3.0)
 	else:
 		$SwordChargeParticles.position = Vector2(8.0, 3.0)
+		$SwordChargeParticles2.position = Vector2(6.0, 3.0)
 
 
 func _update_timers(delta):

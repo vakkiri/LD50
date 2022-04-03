@@ -11,22 +11,6 @@ region = Rect2( 0, 16, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 48, 16, 16 )
@@ -43,21 +27,27 @@ region = Rect2( 0, 64, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 64, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 32, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "pre_dash",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "run",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ) ],
@@ -69,6 +59,16 @@ animations = [ {
 "loop": false,
 "name": "attack",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "pre_dash",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -90,6 +90,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "pre_dash"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -98,6 +99,18 @@ shape = SubResource( 2 )
 
 [node name="SwordChargeParticles" type="CPUParticles2D" parent="."]
 position = Vector2( -8, 3 )
+emitting = false
+amount = 32
+randomness = 0.1
+local_coords = false
+gravity = Vector2( -20, -60 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+color = Color( 0.960784, 1, 0.909804, 1 )
+color_ramp = SubResource( 13 )
+
+[node name="SwordChargeParticles2" type="CPUParticles2D" parent="."]
+position = Vector2( -5, 3 )
 emitting = false
 amount = 32
 randomness = 0.1

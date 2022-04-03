@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/background.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/ui/coinicon.png" type="Texture" id=17]
 [ext_resource path="res://assets/objects/bombicon.png" type="Texture" id=18]
 [ext_resource path="res://assets/ui/shopbanner.png" type="Texture" id=19]
+[ext_resource path="res://scenes/BedroomDoor.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -186,6 +187,9 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 12, 16.5 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
@@ -364,3 +368,18 @@ position = Vector2( 266, 48 )
 
 [node name="BombSpawner3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 152, 48 )
+
+[node name="BedroomDoor" parent="." instance=ExtResource( 20 )]
+margin_left = 95.0
+margin_top = 129.0
+margin_right = 110.0
+margin_bottom = 158.0
+
+[node name="DoorTrigger" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorTrigger"]
+position = Vector2( 107, 143.5 )
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="DoorTrigger" to="." method="_on_DoorTrigger_body_entered"]

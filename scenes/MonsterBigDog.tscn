@@ -1,15 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/monsters/bigdog.png" type="Texture" id=1]
 [ext_resource path="res://scenes/MonsterBig.gd" type="Script" id=2]
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 20, 19 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 20, 0, 20, 19 )
+[ext_resource path="res://assets/monsters/heart.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
@@ -19,16 +12,29 @@ region = Rect2( 0, 0, 20, 19 )
 atlas = ExtResource( 1 )
 region = Rect2( 20, 0, 20, 19 )
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 20, 19 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 19 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"frames": [  ],
 "loop": true,
-"name": "run",
-"speed": 1.0
+"name": "attack",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "hit",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "run",
 "speed": 1.0
 } ]
 
@@ -45,9 +51,19 @@ health = 75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-animation = "run"
+animation = "attack"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, 2 )
 shape = SubResource( 4 )
+
+[node name="Heart" type="TextureRect" parent="."]
+visible = false
+margin_left = -2.0
+margin_top = -18.0
+margin_right = 38.0
+margin_bottom = 22.0
+texture = ExtResource( 3 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
