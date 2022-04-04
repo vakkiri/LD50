@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="NAP GUARDIAN"
+config/name="Nap Guardian"
 run/main_scene="res://scenes/Tutorial.tscn"
 config/icon="res://icon.png"
 
